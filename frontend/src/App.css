@@ -1,15 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%; /* 화면 크기에 맞게 설정 */
+  overflow: hidden; /* 스크롤 방지 */
+}
+
 .App {
-  text-align: center;
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
-  height: 100vh;
   display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+
+.header {
+  width: 100%;
+  padding: 10px;
+  background-color: #6b5b95;
+  color: white;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
+.header-buttons {
+  display: flex;
+  gap: 10px; /* 버튼 간격 */
+}
+
+.book-title {
+  font-size: 18px;
+}
+
+.exit-button {
+  background-color: #ccc;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.exit-button:hover {
+  background-color: #aaa;
+}
+
 .chat-container {
-  width: 400px;
+  flex: 1;
+  width: 100%;
   background: white;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -17,9 +61,20 @@
   padding: 20px;
 }
 
+.chat-placeholder {
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+  font-style: italic;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
 .chat-messages {
-  max-height: 300px;
-  overflow-y: auto;
+  flex: 1;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   padding: 10px;
@@ -27,18 +82,11 @@
   background: #f9f9f9;
 }
 
-.message {
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-.own {
-  text-align: right;
-}
-
 .chat-input {
   display: flex;
+  align-items: center;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .chat-input input {
@@ -48,22 +96,41 @@
   border-radius: 5px;
 }
 
-.chat-input button {
-  padding: 10px 15px;
+.chat-input .add-button,
+.chat-input .send-button {
   background: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  padding: 10px;
 }
 
-.chat-input button:hover {
+.chat-input .add-button:hover,
+.chat-input .send-button:hover {
   background: #0056b3;
 }
 
-.connect-section input {
-  margin-right: 10px;
-  padding: 10px;
-  border: 1px solid #ddd;
+.note-button {
+  background-color: #f8d15b;
+  border: none;
+  padding: 5px 10px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.note-button:hover {
+  background-color: #f4b800;
+}
+
+.exit-button {
+  background-color: #ccc;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.exit-button:hover {
+  background-color: #aaa;
 }
